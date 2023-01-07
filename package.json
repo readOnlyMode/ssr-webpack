@@ -1,0 +1,41 @@
+{
+  "name": "ssr-webpack",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "dev": " NODE_ENV=development webpack server --config ./webpack-configs/client.ts",
+    "build:client": "NODE_ENV=production webpack --config ./webpack-configs/client.ts",
+    "build:server": "tsc --project server",
+    "build:srr": "webpack --config ./webpack-configs/ssr.ts",
+    "build": "yarn build:client && yarn build:srr && yarn build:server", 
+    "start:server": "node build/server/index.js",
+    "dev:server": "concurrently \"tsc --watch --project server\"  \"nodemon build/server/index.js\" "
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.6.1"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.15",
+    "@types/node": "^18.11.18",
+    "@types/react": "^18.0.26",
+    "@types/react-dom": "^18.0.10",
+    "@types/webpack": "^5.28.0",
+    "@types/webpack-dev-server": "^4.7.2",
+    "@types/webpack-node-externals": "^2.5.3",
+    "concurrently": "^7.6.0",
+    "html-webpack-plugin": "^5.5.0",
+    "mini-css-extract-plugin": "^2.7.2",
+    "nodemon": "^2.0.20",
+    "ts-loader": "^9.4.2",
+    "ts-node": "^10.9.1",
+    "typescript": "^4.9.4",
+    "webpack": "^5.75.0",
+    "webpack-cli": "^5.0.1",
+    "webpack-dev-server": "^4.11.1",
+    "webpack-node-externals": "^3.0.0"
+  }
+}

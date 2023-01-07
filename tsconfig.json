@@ -1,0 +1,15 @@
+{
+    "compilerOptions": {
+        "outDir": "./dist",
+        "target": "ES2015",
+        "module": "commonjs",
+        "jsx": "react-jsx",
+        "lib": ["ES2019", "DOM"],
+        "types":["react", "react-dom","node", "webpack"],
+        "strict": true, 
+        "skipLibCheck": true,     
+        "resolveJsonModule": true,
+        "moduleResolution": "node",
+        "esModuleInterop": true,
+    },
+}
